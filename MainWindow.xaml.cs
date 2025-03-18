@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,6 +22,7 @@ namespace gyakorlas
             InitializeComponent();
             label.Visibility=Visibility.Hidden;
             textbox.Visibility=Visibility.Hidden;
+            combobox.SelectedIndex = 0;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -38,6 +40,28 @@ namespace gyakorlas
         {
             label.Visibility = Visibility.Hidden;
             textbox.Visibility = Visibility.Hidden;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(name.Text);
+            StreamWriter writer = new StreamWriter("adatok.txt", false, Encoding.UTF8);
+            if (checkbox.IsChecked == false || textbox.Text=="")
+            {
+                writer.WriteLine(name.Text+";"+kezd.Text+";"+veg.Text+";"+combobox.Text+";"+"0");
+            }
+            else
+            {
+                writer.WriteLine(name.Text + ";" + kezd.Text + ";" + veg.Text + ";" + combobox.Text + ";" + textbox.Text);
+            }
+            name.Text = "";
+            kezd.Text = "";
+            veg.Text = "";
+            combobox.SelectedIndex = 0;
+            textbox.Text = "";
+            
+
+            writer.Close();
         }
     }
 }
