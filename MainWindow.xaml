@@ -24,108 +24,131 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
         </Grid>-->
-        <Label Content="Home"
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Home"
                HorizontalAlignment="Left"
                VerticalAlignment="Center"/>
         <Label Content="About"
-               HorizontalAlignment="Center"
+               
                VerticalAlignment="Center"
                />
         <Label Content="Prices"
                HorizontalAlignment="Right"
                VerticalAlignment="Center"
                />
+        </StackPanel>
+        
         <Button Content="Exit"
-               HorizontalAlignment="Right"/>
+               HorizontalAlignment="Right"
+                Margin="0,0,20,0"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="30*"/>
                 <ColumnDefinition Width="70*"/>
             </Grid.ColumnDefinitions>
 
-            <ComboBox Grid.Row="1"
-                  HorizontalAlignment="Center">
-                <ComboBoxItem Content="Szereted"/>
-                <ComboBoxItem Content="A"/>
-                <ComboBoxItem Content="Hal"/>
-                <ComboBoxItem Content="Rudat"/>
-                <ComboBoxItem Content="?"/>
-            </ComboBox>
+            <StackPanel>
+                <Label Content="Szereted"/>
+                <Label Content="A"/>
+                <Label Content="Hal"/>
+                <Label Content="Rudat"/>
+                <Label Content="?"/>
+            </StackPanel>
+            
             <!--<Button
             Grid.Row="1"
             Grid.Column="2"
             Content="MAIN"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"/>-->
-            <Label Content="Személyes adatok"
+            <StackPanel Grid.Row="1"
+                        Grid.Column="2">
+
+                <Label Content="Személyes adatok"
                    Grid.Row="1"
                    Grid.Column="2"
                    HorizontalAlignment="Center"
-                   Margin="0,10,0,0"/>
-            <Label
+                   />
+                <StackPanel Margin="0, 20, 0, 20" Orientation="Horizontal">
+                    <Label
                 Content="Név:"
                    Grid.Row="1"
                    Grid.Column="2"
-                   Margin="0,50,0,0"/>
-            <TextBox
+                   />
+                    <TextBox
                 x:Name="name"
                 Grid.Column="1"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 MinHeight="20"
                 MinWidth="90"
-                Margin="69,50"
+                
                 />
-            <Label Content="Kezdő dátum:"
+                </StackPanel>
+                <StackPanel Margin="0, 20, 0, 20" Orientation="Horizontal">
+                    <Label Content="Kezdő dátum:"
                 Grid.Row="1"
                 Grid.Column="2"
-                   Margin="0,110,0,0"/>
-            <TextBox
+                   />
+                    <TextBox
                 x:Name="kezd"
                 Grid.Column="1"
-                Margin="100,110,332,232"/>
-            <Label
+                        MinHeight="15"
+                        MinWidth="70"
+                />
+                    <Label
                 Content="Vég. dátum"
                 Grid.Row="1"
                 Grid.Column="2"
                 HorizontalAlignment="Right"
-                Margin="0,110,170,0"/>
-            <TextBox
+                />
+                    <TextBox
                 x:Name="veg"
                 Grid.Column="1"
-                Margin="400,110,39,232"/>
-            <Label
+                        MinHeight="15"
+                        MinWidth="70"
+                />
+                </StackPanel>
+                <StackPanel Margin="0, 20, 0, 20" Orientation="Horizontal">
+                <Label
                 Content="Fizetés típusa:"
                 Grid.Row="1"
                 Grid.Column="2"
-                Margin="0, 170"/>
-            <ComboBox
+                />
+                <ComboBox
                 x:Name="combobox"
                 Grid.Column="1"
-                Margin="90,170,350,170">
-                <ComboBoxItem Content="Kártya"/>
-                <ComboBoxItem Content="Készpénz"/>
-            </ComboBox>
-            <CheckBox
+                >
+                    <ComboBoxItem Content="Kártya"/>
+                    <ComboBoxItem Content="Készpénz"/>
+                </ComboBox>
+                </StackPanel>
+                <CheckBox
+                    Margin="0, 20, 0, 20"
                 x:Name="checkbox"
                 Content="Egyéb személyek"
                 Grid.Row="1"
                 Grid.Column="2"
                 VerticalAlignment="Bottom"
-                Margin="0,0,0,120" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                 Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
 
-            <Label x:Name="label" 
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="label" 
                 Content="Személyek száma:"
                    Grid.Row="1"
                    Grid.Column="2"
                    VerticalAlignment="Bottom"
-                   Margin="15,0,0,25"/>
-            <TextBox
+                   />
+                    <TextBox
                 x:Name="textbox"
                 Grid.Row="1"
                 Grid.Column="2"
                 VerticalAlignment="Bottom"
-                Margin="120,0,320,28"/>
+                        MinHeight="15"
+                        MinWidth="70"
+                />
+                </StackPanel>
+            </StackPanel>
             <Button
                 x:Name="button"
                 Content="Mentés"
@@ -136,11 +159,11 @@
                 Margin="0,0,30,30" Click="button_Click"/>
         </Grid>
         <Label Content="Fish Sticks"
-               
+               Grid.Row="2"
                VerticalAlignment="Center"
                />
         <Label Content="©"
-               
+               Grid.Row="2"
                HorizontalAlignment="Right"
                VerticalAlignment="Top"
                />
