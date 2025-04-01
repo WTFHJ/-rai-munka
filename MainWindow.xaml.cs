@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using gyakorlas.Data;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,12 +18,14 @@ namespace gyakorlas
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Reservation Reservation { get; set; } = new Reservation();
         public MainWindow()
         {
             InitializeComponent();
             label.Visibility=Visibility.Hidden;
             textbox.Visibility=Visibility.Hidden;
             combobox.SelectedIndex = 0;
+            this.DataContext = Reservation;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,24 +47,8 @@ namespace gyakorlas
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            Reservation.Auteur();
             MessageBox.Show(name.Text);
-            StreamWriter writer = new StreamWriter("adatok.txt", false, Encoding.UTF8);
-            if (checkbox.IsChecked == false || textbox.Text=="")
-            {
-                writer.WriteLine(name.Text+";"+kezd.Text+";"+veg.Text+";"+combobox.Text+";"+"0");
-            }
-            else
-            {
-                writer.WriteLine(name.Text + ";" + kezd.Text + ";" + veg.Text + ";" + combobox.Text + ";" + textbox.Text);
-            }
-            name.Text = "";
-            kezd.Text = "";
-            veg.Text = "";
-            combobox.SelectedIndex = 0;
-            textbox.Text = "";
-            
-
-            writer.Close();
         }
     }
 }
