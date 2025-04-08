@@ -1,4 +1,4 @@
-﻿<Window x:Class="gyakorlas.MainWindow"
+<Window x:Class="gyakorlas.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -28,16 +28,16 @@
             <Label Content="Home"
                HorizontalAlignment="Left"
                VerticalAlignment="Center"/>
-        <Label Content="About"
+            <Label Content="About"
                
                VerticalAlignment="Center"
                />
-        <Label Content="Prices"
+            <Label Content="Prices"
                HorizontalAlignment="Right"
                VerticalAlignment="Center"
                />
         </StackPanel>
-        
+
         <Button Content="Exit"
                HorizontalAlignment="Right"
                 Margin="0,0,20,0"/>
@@ -54,7 +54,7 @@
                 <Label Content="Rudat"/>
                 <Label Content="?"/>
             </StackPanel>
-            
+
             <!--<Button
             Grid.Row="1"
             Grid.Column="2"
@@ -112,19 +112,19 @@
                 />
                 </StackPanel>
                 <StackPanel Margin="0, 20, 0, 20" Orientation="Horizontal">
-                <Label
+                    <Label
                 Content="Fizetés típusa:"
                 Grid.Row="1"
                 Grid.Column="2"
                 />
-                <ComboBox
+                    <ComboBox
                 x:Name="combobox"
                 Grid.Column="1"
                     Text="{Binding Method}"
                 >
-                    <ComboBoxItem Content="Kártya"/>
-                    <ComboBoxItem Content="Készpénz"/>
-                </ComboBox>
+                        <ComboBoxItem Content="Kártya"/>
+                        <ComboBoxItem Content="Készpénz"/>
+                    </ComboBox>
                 </StackPanel>
                 <CheckBox
                     Margin="0, 20, 0, 20"

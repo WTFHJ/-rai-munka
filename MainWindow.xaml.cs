@@ -48,7 +48,7 @@ namespace gyakorlas
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Reservation.Auteur();
-            MessageBox.Show(name.Text);
+            //MessageBox.Show(name.Text);
         }
     }
 }
